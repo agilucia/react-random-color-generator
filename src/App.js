@@ -1,4 +1,3 @@
-// import chalk from 'chalk';
 import randomColor from 'randomcolor';
 import { useState } from 'react';
 
