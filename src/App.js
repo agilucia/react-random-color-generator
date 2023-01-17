@@ -4,11 +4,6 @@ import { useState } from 'react';
 
 import { css } from '@emotion/react';
 
-const divStyles = () => css`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
 const buttonStyles = () => css`
   display: flex;
   justify-content: center;
@@ -19,16 +14,24 @@ export default function App() {
   const [color, setColor] = useState(randomColor());
   return (
     <div>
-      <h1 css={divStyles}>Random Color Generator</h1>
-      <button
-        css={buttonStyles}
-        onClick={() => {
-          setColor(randomColor());
+      <h1 css={buttonStyles()}>Random Color Generator</h1>
+      <div css={buttonStyles()}>
+        <button
+          onClick={() => {
+            setColor(randomColor());
+          }}
+        >
+          Generate
+        </button>
+      </div>
+      <div
+        style={{
+          backgroundColor: color,
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
         }}
       >
-        Generate
-      </button>
-      <div css={divStyles()} style={{ backgroundColor: color }}>
         Generated Color: {color}
       </div>
     </div>
